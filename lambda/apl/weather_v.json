@@ -1,0 +1,49 @@
+{
+    "type": "APL",
+    "version": "1.3",
+    "theme": "dark",
+    "mainTemplate": {
+        "parameters": [
+            "myData"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "item": [
+                    {
+                        "type": "Image",
+                        "width": "100vw",
+                        "height": "100vh",
+                        "scale": "best-fill",
+                        "align": "center",
+                        "source": "${myData.bgImage}",
+                        "position": "absolute"
+                    },
+                    {
+                        "type": "Container",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${myData.currentTemp}°",
+                                "fontSize": "200",
+                                "lineHeight": 1
+                            },
+                            {
+                                "type": "Text",
+                                "text": "${myData.weatherDescription}",
+                                "fontSize": "50"
+                            }
+                        ],
+                        "alignItems": "center",
+                        "justifyContent": "start",
+                        "direction": "column",
+                        "alignSelf": "center"
+                    }
+                ],
+                "justifyContent": "center"
+            }
+        ]
+    }
+}

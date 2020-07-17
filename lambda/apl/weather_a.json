@@ -1,0 +1,38 @@
+{
+    "type": "APLA",
+    "version": "0.2",
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "item": {
+            "type": "Mixer",
+            "items": [
+                {
+                    "type": "Speech",
+                    "contentType": "SSML",
+                    "content": "<speak>${payload.myData.ssml}</speak>"
+                },
+                {
+                    "type": "Audio",
+                    "when": "${payload.myData.audio != ''}",
+                    "source":"${payload.myData.audio}",
+                    "filters": [
+                        {
+                            "type": "Volume",
+                            "adjustment": "40%"
+                        },
+                        {
+                            "type": "FadeIn",
+                            "duration": 300
+                        },
+                        {
+                            "type": "FadeOut",
+                            "duration": 300
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
