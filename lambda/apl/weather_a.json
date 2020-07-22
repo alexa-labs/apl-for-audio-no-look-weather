@@ -1,6 +1,6 @@
 {
     "type": "APLA",
-    "version": "0.2",
+    "version": "0.8",
     "mainTemplate": {
         "parameters": [
             "payload"
@@ -20,7 +20,7 @@
                     "filters": [
                         {
                             "type": "Volume",
-                            "adjustment": "40%"
+                            "amount": "40%"
                         },
                         {
                             "type": "FadeIn",
