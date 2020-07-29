@@ -6,8 +6,6 @@
 const Alexa = require('ask-sdk-core');
 const i18n = require('i18next');
 const languageStrings = require('./languageStrings');
-const apl_audio = require('./apl/weather_a');
-const apl_visuals = require('./apl/weather_v');
 
 // core functionality for fact skill
 const GetWeatherHandler = {
@@ -20,13 +18,13 @@ const GetWeatherHandler = {
     },
     handle(handlerInput) {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
-        
+
         // the following constants are hardcoded for demo purposes only.
         // In a real skill these values would be pulled from an API
         const weatherCode = 01
         const weatherDescription = 'cloudy'
         const currentTemp = 70
-        
+
         // the values above will be inserted into the SSML before it's sent to the APL response
         const ssml = requestAttributes.t('WEATHER_REPORT', { currentTemp: currentTemp, weatherDescription: weatherDescription });
         let audio = '';
@@ -49,7 +47,10 @@ const GetWeatherHandler = {
                 .addDirective({
                     "type": "Alexa.Presentation.APL.RenderDocument",
                     "token": "token",
-                    "document": apl_visuals,
+                    "document": {
+                        "type":"Link",
+                        "src":  "doc://alexa/apla/documents/weather_v"
+                    },
                     "datasources": {
                         "myData": {
                             "bgImage": bgImage,
@@ -64,7 +65,10 @@ const GetWeatherHandler = {
             .addDirective({
                 "type": "Alexa.Presentation.APLA.RenderDocument",
                 "token": "token",
-                "document": apl_audio,
+                "document": {
+                    "type":"Link",
+                    "src":  "doc://alexa/apla/documents/weather_a"
+                },
                 "datasources": {
                     "myData": {
                         "ssml": ssml,
