@@ -1,14 +1,10 @@
 # No Look Weather
 Need to know the weather but don't have time to look outside? This skill is for you :)
 
-_This sample skill demonstrates how to use APL for Audio in an Alexa response._
+_This sample skill demonstrates how to use APL for Audio in an Alexa response. All responses reference [linked documents](https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apla-interface.html#renderdocument-directive)._
 
-### Three Options for Skill Setup
-There are a number of different ways for you to setup your skill, depending on your experience and what tools you have available.
-
- * If this is your first skill, choose the [Alexa-Hosted backend instructions](./instructions/setup-vui-alexa-hosted.md) to get started quickly.
- * If you want to manage the backend resources in your own AWS account, you can follow the [AWS-Hosted instructions](./instructions/setup-vui-aws-hosted.md).
- * Developers with the ASK Command Line Interface configured may follow the [ASK CLI instructions](./instructions/cli.md).
+### Get Started Quickly
+[Import to an Alexa-hosted skill.](https://developer.amazon.com/en-US/docs/alexa/hosted-skills/alexa-hosted-skills-git-import.html)
 
 ### Security
 
