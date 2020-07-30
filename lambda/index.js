@@ -49,7 +49,7 @@ const GetWeatherHandler = {
                     "token": "token",
                     "document": {
                         "type":"Link",
-                        "src":  "doc://alexa/apla/documents/weather_v"
+                        "src":  "doc://alexa/apl/documents/weather_v"
                     },
                     "datasources": {
                         "myData": {
