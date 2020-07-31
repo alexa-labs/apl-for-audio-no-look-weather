@@ -123,6 +123,7 @@ const ExitHandler = {
         const requestAttributes = handlerInput.attributesManager.getRequestAttributes();
         return handlerInput.responseBuilder
             .speak(requestAttributes.t('STOP_MESSAGE'))
+            .withShouldEndSession(true)
             .getResponse();
     },
 };
